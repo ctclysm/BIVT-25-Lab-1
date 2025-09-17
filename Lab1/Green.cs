@@ -121,28 +121,24 @@
         {
             bool answer = false;
 
-            // code here
-            int sleepTime = 4 * 60;
-            int wakeTime = 14 * 60;
-            for (int day = 1; day <= X; day++)
+            // code her
+
+            int days = 0;
+
+            if (X % 2 == 0)
             {
-                if (day % 2 == 1)
-                {
-                     sleepTime -= Y;
-                }
-                   
-                wakeTime -= 60;
-                int duration = wakeTime - sleepTime;
-                if (duration < 0)
-                {
-                     duration += 24 * 60;
-                }
-                   
-                if (wakeTime == 7 * 60 && duration >= 7 * 60 && duration <= 9 * 60)
-                {
-                    answer = true;
-                }
+                days = X / 2;
             }
+            else
+            {
+                days = X / 2 + 1;
+            }
+
+            if (X >= 7 && (240 <= (days * Y)) && (360 >= (days * Y)))
+            {
+                answer = true;
+            }
+
             // end
 
                 return answer;
